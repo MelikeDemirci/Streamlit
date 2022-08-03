@@ -23,7 +23,7 @@ from spellchecker import SpellChecker
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import SVC
 
-
+nltk.download('stopwords')
 # Model
 svm_model = pickle.load(open("model.sav", 'rb'))
 tfidf = pickle.load(open("tfidf.sav", 'rb'))
@@ -92,7 +92,6 @@ def remove_punctuation(text):
 
 # Removing the stop words
 def remove_stopwords(text):
-	stopwords = nltk.download('stopwords')
 	STOPWORDS = set(stopwords.words('english'))
 	return " ".join([word for word in str(text).split() if word not in STOPWORDS])
 

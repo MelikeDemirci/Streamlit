@@ -16,6 +16,7 @@ from PIL import Image
 from wordcloud import WordCloud
 
 # ML
+import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from spellchecker import SpellChecker
@@ -91,6 +92,7 @@ def remove_punctuation(text):
 
 # Removing the stop words
 def remove_stopwords(text):
+	stopwords = nltk.download('stopwords')
 	STOPWORDS = set(stopwords.words('english'))
 	return " ".join([word for word in str(text).split() if word not in STOPWORDS])
 

@@ -23,8 +23,7 @@ from spellchecker import SpellChecker
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import SVC
 
-nltk.download('stopwords')
-nltk.download('wordnet')
+nltk.download('all')
 # Model
 svm_model = pickle.load(open("model.sav", 'rb'))
 tfidf = pickle.load(open("tfidf.sav", 'rb'))
